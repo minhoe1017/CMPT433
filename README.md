@@ -1,17 +1,17 @@
 # CMPT433
 Summer 2018
-Embedded system_BeagleBone Green w Zen Cape
+Embedded system_BeagleBone Green w Zen Cape\n
 
 ASSIGNMENTS
 	as1_JOYSTICKgame
-  as2_SORTER
-  as3_BEATBOX
+	as2_SORTER
+	as3_BEATBOX
 
 PROJECT
-  Proposal
-  Milestone1
-  Milestone2
-  Final
+	Proposal
+	Milestone1
+	Milestone2
+	Final
   
   
   
