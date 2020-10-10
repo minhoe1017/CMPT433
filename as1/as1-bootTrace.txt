@@ -1,0 +1,258 @@
+﻿
+root@mka102-beaglebone:~# RE[K[Kreboot
+[[1;31mFAILED[0m] Failed to start Store Sound Card State.
+See 'systemctl status alsa-store.service' for details.
+[[32m  OK  [0m] Started Synchronise Hardware Clock to System Clock.
+[[32m  OK  [0m] Stopped User Manager for UID 0.
+         Stopping LSB: Load kernel modules needed to enable cpufreq scaling...
+         Stopping Login Service...
+[[32m  OK  [0m] Removed slice user-0.slice.
+[[32m  OK  [0m] Removed slice system-serial\x2dgetty.slice.
+[[32m  OK  [0m] Removed slice system-getty.slice.
+[         Stopping /etc/rc.local Compatibility...
+[[32m  OK  [0m] Stopped /etc/rc.local Compatibility.
+         Stopping Permit User Sessions...
+[[32m  OK  [0m] Stopped Login Service.
+[[32m  OK  [0m] Stopped LSB: Load kernel modules needed to enable cpufreq scaling.
+[[32m  OK  [0m] Stopped Permit User Sessions.
+[[32m  OK  [0m] Stopped LSB: Apache2 web server.
+[[32m  OK  [0m] Stopped target Network is Online.
+[[32m  OK  [0m] Stopped target Network.
+         Stopping WPA supplicant...
+         Stopping Connection service...
+[[32m  OK  [0m] Stopped target Remote File Systems.
+[[32m  OK  [0m] Stopped target Remote File Systems (Pre).
+[[32m  OK  [0m] Stopped WPA supplicant.
+[[32m  OK  [0m] Stopped Connection service.
+         Stopping D-Bus System Message Bus...
+[[32m  OK  [0m] Stopped D-Bus System Message Bus.
+[[32m  OK  [0m] Stopped target Basic System.
+[[32m  OK  [0m] Stopped target Slices.
+[[32m  OK  [0m] Removed slice User and Session Slice.
+[[32m  OK  [0m] Stopped target Paths.
+[[32m  OK  [0m] Stopped target Timers.
+[[32m  OK  [0m] Stopped target Sockets.
+[[32m  OK  [0m] Closed cloud9.socket.
+[[32m  OK  [0m] Closed node-red.socket.
+[[32m  OK  [0m] Closed Avahi mDNS/DNS-SD Stack Activation Socket.
+[[32m  OK  [0m] Closed bonescript.socket.
+[[32m  OK  [0m] Closed Syslog Socket.
+[[32m  OK  [0m] Closed D-Bus System Message Bus Socket.
+[[32m  OK  [0m] Stopped target System Initialization.
+         Stopping Network Time Synchronization...
+         Stopping Apply Kernel Variables...
+[[32m  OK  [0m] Stopped Apply Kernel Variables.
+[[32m  OK  [0m] Stopped target Encrypted Volumes.
+         Stopping Update UTMP about System Boot/Shutdown...
+         Stopping Load Kernel Modules...
+[[32m  OK  [0m] Stopped Load Kernel Modules.
+         Stopping LSB: Raise network interfaces....
+[[32m  OK  [0m] Stopped target Swap.
+[[32m  OK  [0m] Stopped Network Time Synchronization.
+[[32m  OK  [0m] Stopped Update UTMP about System Boot/Shutdown.
+[[32m  OK  [0m] Stopped LSB: Raise network interfaces..
+         Stopping Load/Save Random Seed...
+         Stopping Create Volatile Files and Directories...
+[[32m  OK  [0m] Stopped Create Volatile Files and Directories.
+[[32m  OK  [0m] Stopped target Local File Systems.
+         Unmounting /run/user/0...
+         Unmounting /sys/kernel/debug...
+[[32m  OK  [0m] Stopped Load/Save Random Seed.
+[[32m  OK  [0m] Unmounted /run/user/0.
+[[32m  OK  [0m] Unmounted /sys/kernel/debug.
+[[32m  OK  [0m] Reached target Unmount All Filesystems.
+[[32m  OK  [0m] Stopped target Local File Systems (Pre).
+         Stopping Create Static Device Nodes in /dev...
+[[32m  OK  [0m] Stopped Create Static Device Nodes in /dev.
+         Stopping Remount Root and Kernel File Systems...
+[[32m  OK  [0m] Stopped Remount Root and Kernel File Systems.
+[[32m  OK  [0m] Reached target Shutdown.
+[  715.042017] watchdog watchdog0: watchdog did not stop!
+[  715.306193] reboot: Restarting system
+
+U-Boot SPL 2016.03-00001-gd12d09f (Mar 17 2016 - 16:16:15)
+Trying to boot from MMC
+bad magic
+
+
+
+U-Boot 2016.03-00001-gd12d09f (Mar 17 2016 - 16:16:15 -0500), Build: jenkins-github_Bootloader-Builder-351
+
+
+       Watchdog enabled
+
+I2C:   ready
+
+DRAM:  512 MiB
+
+Reset Source: Global warm SW reset has occurred.
+
+Reset Source: Power-on reset has occurred.
+
+MMC:   OMAP SD/MMC: 0, OMAP SD/MMC: 1
+
+Using default environment
+
+
+Net:   <ethaddr> not set. Validating first E-fuse MAC
+
+cpsw, usb_ether
+
+Press SPACE to abort autoboot in 2 seconds
+
+Card did not respond to voltage select!
+
+gpio: pin 56 (gpio 56) value is 0
+
+gpio: pin 55 (gpio 55) value is 0
+
+gpio: pin 54 (gpio 54) value is 0
+
+gpio: pin 53 (gpio 53) value is 1
+
+Card did not respond to voltage select!
+
+Card did not respond to voltage select!
+
+switch to partitions #0, OK
+
+mmc1(part 0) is current device
+
+Scanning mmc 1:1...
+
+gpio: pin 56 (gpio 56) value is 0
+
+gpio: pin 55 (gpio 55) value is 0
+
+gpio: pin 54 (gpio 54) value is 0
+
+gpio: pin 53 (gpio 53) value is 1
+
+switch to partitions #0, OK
+
+mmc1(part 0) is current device
+
+gpio: pin 54 (gpio 54) value is 1
+
+Checking for: /uEnv.txt ...
+
+Checking for: /boot.scr ...
+
+Checking for: /boot/boot.scr ...
+
+Checking for: /boot/uEnv.txt ...
+
+gpio: pin 55 (gpio 55) value is 1
+
+1240 bytes read in 16 ms (75.2 KiB/s)
+
+Loaded environment from /boot/uEnv.txt
+
+Checking if uname_r is set in /boot/uEnv.txt...
+
+gpio: pin 56 (gpio 56) value is 1
+
+Running uname_boot ...
+
+loading /boot/vmlinuz-4.4.9-ti-r25 ...
+
+7833256 bytes read in 446 ms (16.7 MiB/s)
+
+loading /boot/dtbs/4.4.9-ti-r25/am335x-bonegreen.dtb ...
+
+58269 bytes read in 48 ms (1.2 MiB/s)
+
+loading /boot/initrd.img-4.4.9-ti-r25 ...
+
+4761957 bytes read in 278 ms (16.3 MiB/s)
+
+debug: [console=ttyO0,115200n8 root=UUID=123ac961-7921-459f-89f0-4cc39e9549d7 ro rootfstype=ext4 rootwait coherent_pool=1M quiet cape_universal=enable] ...
+
+debug: [bootz 0x82000000 0x88080000:48a965 0x88000000] ...
+
+Kernel image @ 0x82000000 [ 0x000000 - 0x7786a8 ]
+
+## Flattened Device Tree blob at 88000000
+
+   Booting using the fdt blob at 0x88000000
+
+   Loading Ramdisk to 8fb75000, end 8ffff965 ... OK
+
+   Loading Device Tree to 8fb63000, end 8fb7439c ... OK
+
+
+Starting kernel ...
+
+
+[    1.997970] wkup_m3_ipc 44e11324.wkup_m3_ipc: could not get rproc handle
+[    2.168796] omap_voltage_late_init: Voltage driver support not added
+[    2.176246] PM: Cannot get wkup_m3_ipc handle
+[    2.285125] bone_capemgr bone_capemgr: Invalid signature 'ffffffff' at slot 0
+[    2.292328] bone_capemgr bone_capemgr: slot #0: No cape found
+[    2.337022] bone_capemgr bone_capemgr: slot #1: No cape found
+[    2.381020] bone_capemgr bone_capemgr: slot #2: No cape found
+[    2.425020] bone_capemgr bone_capemgr: slot #3: No cape found
+Loading, please wait...
+fsck: error 2 (No such file or directory) while executing fsck.ext4 for /dev/mmcblk0p1
+fsck exited with status code 8
+[    9.949503] systemd-fsck[157]: BOOT: clean, 137719/236176 files, 889957/943872 blocks
+[   14.873356] davinci-mcasp 48038000.mcasp: invalid tdm slots: 0
+[   15.128927] davinci-mcasp 4803c000.mcasp: invalid tdm slots: 0
+[   16.931193]  remoteproc1: failed to load am335x-pru0-fw
+[   16.983057]  remoteproc1: request_firmware failed: -2
+[   16.988267] pru-rproc 4a334000.pru0: rproc_boot failed
+[   17.635640]  remoteproc1: failed to load am335x-pru1-fw
+[   17.681434]  remoteproc1: request_firmware failed: -2
+[   17.686640] pru-rproc 4a338000.pru1: rproc_boot failed
+[   21.660844] platform 48300180.eqep: Cannot lookup hwmod 'eqep0'
+[   21.737804] platform 48302180.eqep: Cannot lookup hwmod 'eqep1'
+[   21.799157] platform 48304180.eqep: Cannot lookup hwmod 'eqep2'
+[   23.449675] eqep 48300180.eqep: failed to get clock
+[   23.673738] eqep 48302180.eqep: failed to get clock
+[   23.881689] eqep 48304180.eqep: failed to get clock
+
+
+Debian GNU/Linux 8 mka102-beaglebone ttyS0
+
+BeagleBoard.org Debian Image 2016-05-13
+
+Support/FAQ: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
+
+default username:password is [debian:temppwd]
+
+The IP Address for usb0 is: 192.168.7.2
+mka102-beaglebone login: root
+
+Last login: Sat May 19 23:30:16 UTC 2018 on ttyS0
+Linux mka102-beaglebone 4.4.9-ti-r25 #1 SMP Thu May 5 23:08:13 UTC 2016 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Hello embedded world, from Min Kim!
+
+Press the Zen cape's Joystick in the direction of the LED.
+                UP for LED 0 (top)
+                DOWN for LED 3 (bottom)
+                LEFT/RIGHT for exit app.
+Press joystick; current score(0 / 0)
+Correct!
+Press joystick; current score(1 / 1)
+Incorrect! :(
+Press joystick; current score(1 / 2)
+Correct!
+Press joystick; current score(2 / 3)
+Correct!
+Press joystick; current score(3 / 4)
+Your final score was (3 / 4)
+Thank you for playing!
+root@mka102-beaglebone:~# ./mountNFS 
+root@mka102-beaglebone:~# ls /mnt/remote/myApps/
+hello
+root@mka102-beaglebone:~# 
+root@mka102-beaglebone:~# 
+root@mka102-beaglebone:~# 
+

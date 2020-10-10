@@ -1,0 +1,89 @@
+﻿min@min-Inspiron-13-5368:~$ ifconfig
+enx985dadc713f3 Link encap:Ethernet  HWaddr 98:5d:ad:c7:13:f3  
+          inet addr:192.168.7.1  Bcast:192.168.7.255  Mask:255.255.255.0
+          inet6 addr: fe80::7517:b797:9f33:42c5/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:85 errors:3 dropped:0 overruns:0 frame:3
+          TX packets:123 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:15118 (15.1 KB)  TX bytes:23179 (23.1 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:1165 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1165 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:183295 (183.2 KB)  TX bytes:183295 (183.2 KB)
+
+wlp1s0    Link encap:Ethernet  HWaddr 00:db:df:e6:03:8e  
+          inet addr:207.23.171.21  Bcast:207.23.171.255  Mask:255.255.252.0
+          inet6 addr: fe80::dcf1:1f8f:398c:3873/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:39967 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:10742 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:10323455 (10.3 MB)  TX bytes:2733094 (2.7 MB)
+
+min@min-Inspiron-13-5368:~$ ping 192.168.7.2
+PING 192.168.7.2 (192.168.7.2) 56(84) bytes of data.
+64 bytes from 192.168.7.2: icmp_seq=1 ttl=64 time=0.436 ms
+64 bytes from 192.168.7.2: icmp_seq=2 ttl=64 time=0.473 ms
+64 bytes from 192.168.7.2: icmp_seq=3 ttl=64 time=0.421 ms
+64 bytes from 192.168.7.2: icmp_seq=4 ttl=64 time=0.503 ms
+^C
+--- 192.168.7.2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3028ms
+rtt min/avg/max/mdev = 0.421/0.458/0.503/0.035 ms
+min@min-Inspiron-13-5368:~$ ssh root@192.168.7.2
+Debian GNU/Linux 8
+
+BeagleBoard.org Debian Image 2016-05-13
+
+Support/FAQ: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
+
+default username:password is [debian:temppwd]
+
+Last login: Sat May 19 23:22:32 2018 from 192.168.7.1
+root@beaglebone:~# cd /proc
+root@beaglebone:/proc# ls
+1    194  304  448  694  80           driver       locks         sys
+10   198  308  451  697  9            execdomains  meminfo       sysrq-trigger
+11   2    31   5    699  96           fb           misc          sysvipc
+12   20   32   500  7    apm          filesystems  modules       thread-self
+13   21   320  509  71   asound       fs           mounts        timer_list
+133  22   337  511  72   buddyinfo    interrupts   mtd           timer_stats
+134  23   345  528  73   bus          iomem        net           tty
+14   24   358  536  74   cgroups      ioports      pagetypeinfo  uptime
+15   25   374  54   75   cmdline      irq          partitions    version
+16   26   380  55   76   config.gz    kallsyms     sched_debug   vmallocinfo
+166  266  4    56   767  consoles     key-users    schedstat     vmstat
+168  27   407  58   769  cpu          keys         scsi          zoneinfo
+17   28   414  59   77   cpuinfo      kmsg         self
+177  29   425  591  775  crypto       kpagecgroup  slabinfo
+178  3    445  6    78   device-tree  kpagecount   softirqs
+18   30   446  60   79   devices      kpageflags   stat
+19   300  447  61   8    diskstats    loadavg      swaps
+root@beaglebone:/proc# cat version
+Linux version 4.4.9-ti-r25 (root@b3-jetson-tk1-2gb) (gcc version 4.9.2 (Debian 4.9.2-10) ) #1 SMP Thu May 5 23:08:13 UTC 2016
+root@beaglebone:/proc# cat uptime
+341.18 308.04
+root@beaglebone:/proc# cat cpuinfo
+processor       : 0
+model name      : ARMv7 Processor rev 2 (v7l)
+BogoMIPS        : 298.59
+Features        : half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpd32 
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x3
+CPU part        : 0xc08
+CPU revision    : 2
+
+Hardware        : Generic AM33XX (Flattened Device Tree)
+Revision        : 0000
+Serial          : 0000000000000000
+root@beaglebone:/proc# exit
+logout
+Connection to 192.168.7.2 closed.
+
