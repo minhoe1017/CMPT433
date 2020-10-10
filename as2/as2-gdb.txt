@@ -1,0 +1,135 @@
+﻿<HOST>
+
+min@min-Inspiron-13-5368:~/cmpt433/work/as2/debug$ make
+arm-linux-gnueabihf-gcc -Wall -g -std=c99 -D _POSIX_C_SOURCE=200809L -Werror noworky.c -o noworky
+cp noworky /home/min/cmpt433/public/myApps/
+min@min-Inspiron-13-5368:~/cmpt433/work/as2/debug$ gdb-multiarch -q noworky
+Reading symbols from noworky...done.
+(gdb) target remote 192.168.7.2:2001
+Remote debugging using 192.168.7.2:2001
+Reading /lib/ld-linux-armhf.so.3 from remote target...
+warning: File transfers from remote targets can be slow. Use "set sysroot" to access files locally instead.
+Reading /lib/ld-linux-armhf.so.3 from remote target...
+Reading symbols from target:/lib/ld-linux-armhf.so.3...Reading /lib/ld-2.19.so from remote target...
+Reading /lib/.debug/ld-2.19.so from remote target...
+(no debugging symbols found)...done.
+0xb6fd7bc0 in ?? () from target:/lib/ld-linux-armhf.so.3
+(gdb) continue
+Continuing.
+Reading /lib/arm-linux-gnueabihf/libc.so.6 from remote target...
+Reading /lib/arm-linux-gnueabihf/libc-2.19.so from remote target...
+Reading /lib/arm-linux-gnueabihf/.debug/libc-2.19.so from remote target...
+
+Program received signal SIGSEGV, Segmentation fault.
+0x000104ae in swapContent (d1=0x20ff8, d2=0x21050) at noworky.c:25
+25              *d1 = tmp;
+(gdb) list
+20      }*/
+21      void swapContent(double *d1, double *d2)
+22      {
+23              double tmp = *d2;
+24              *d2 = *d1;
+25              *d1 = tmp;
+26      }
+27      
+28      /*
+29       * Swap the contents of the two arrays.
+(gdb) info args
+d1 = 0x20ff8
+d2 = 0x21050
+(gdb) bt
+#0  0x000104ae in swapContent (d1=0x20ff8, d2=0x21050) at noworky.c:25
+#1  0x000104e4 in tradeArrays (array1=0x22008, array2=0x22060, size=10)
+    at noworky.c:35
+#2  0x000105ec in main () at noworky.c:78
+(gdb) up
+#1  0x000104e4 in tradeArrays (array1=0x22008, array2=0x22060, size=10)
+    at noworky.c:35
+35                      swapContent(&array1[i], &array2[i]);
+(gdb) list
+30       */
+31      void tradeArrays(double *array1, double *array2, int size)
+32      {
+33              unsigned int i;
+34              for (i = size-1; i >= 0; i--) {
+35                      swapContent(&array1[i], &array2[i]);
+36              }
+37      }
+38      
+39      /*
+(gdb) info args
+array1 = 0x22008
+array2 = 0x22060
+size = 10
+(gdb) quit
+A debugging session is active.
+
+        Inferior 1 [process 904] will be killed.
+
+Quit anyway? (y or n) y
+min@min-Inspiron-13-5368:~/cmpt433/work/as2/debug$ make
+arm-linux-gnueabihf-gcc -Wall -g -std=c99 -D _POSIX_C_SOURCE=200809L -Werror noworky.c -o noworky
+cp noworky /home/min/cmpt433/public/myApps/
+min@min-Inspiron-13-5368:~/cmpt433/work/as2/debug$ 
+
+
+<TARGET>
+
+root@mka102-beaglebone:/mnt/remote/myApps# gdbserver localhost:2001 noworky 
+Process noworky created; pid = 904
+Listening on port 2001
+Remote debugging from host 192.168.7.1
+noworky: by Brian Fraser
+Initial values: 
+  0: 000.0 --> 000.0
+  1: 002.0 --> 010.0
+  2: 004.0 --> 020.0
+  3: 006.0 --> 030.0
+  4: 008.0 --> 040.0
+  5: 010.0 --> 050.0
+  6: 012.0 --> 060.0
+  7: 014.0 --> 070.0
+  8: 016.0 --> 080.0
+  9: 018.0 --> 090.0
+GDBserver exiting
+root@mka102-beaglebone:/mnt/remote/myApps# ./noworky 
+noworky: by Brian Fraser
+Initial values: 
+  0: 000.0 --> 000.0
+  1: 002.0 --> 010.0
+  2: 004.0 --> 020.0
+  3: 006.0 --> 030.0
+  4: 008.0 --> 040.0
+  5: 010.0 --> 050.0
+  6: 012.0 --> 060.0
+  7: 014.0 --> 070.0
+  8: 016.0 --> 080.0
+  9: 018.0 --> 090.0
+Final values: 
+  0: 000.0 --> 000.0
+  1: 010.0 --> 002.0
+  2: 020.0 --> 004.0
+  3: 030.0 --> 006.0
+  4: 040.0 --> 008.0
+  5: 050.0 --> 010.0
+  6: 060.0 --> 012.0
+  7: 070.0 --> 014.0
+  8: 080.0 --> 016.0
+  9: 090.0 --> 018.0
+Done.
+root@mka102-beaglebone:/mnt/remote/myApps#
+
+
+<EXPLANATION>
+Passed values are different between in "swapContent" and in "tradeArrays".
+In swapContent:
+        (gdb) info args
+        d1 = 0x20ff8
+        d2 = 0x21050
+However, in tradeArrays:
+        (gdb) info args
+        array1 = 0x22008
+        array2 = 0x22060
+To change the values of the pointers themselves, the function "swapContent" has to accept
+the double pointers. Otherwise the pointers get copied within the function and only swapping
+the temp copies rather than the real pointers the caller has passed.
