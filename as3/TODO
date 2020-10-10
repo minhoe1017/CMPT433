@@ -1,0 +1,32 @@
+Joystick
+	Read
+		in, up/down/left/right
+			in -> cycle ONLY once 
+			u/d/l/r -> debounce for 1/4 second
+	wrapper
+		left/right -> increase(decrease) tempo by 5 BPM
+			BPM [40,300]	// default 120
+		up/down -> increase(decrease) volume by 5
+			Volume [0,100]	// default 80
+		in -> cycle beats
+			standard -> custom -> none -> standard
+Accellerometer
+	Read
+		x/y/z with debounce
+	Wrapper
+		play drum for each
+Input
+	read joystick/accellerometer every 10ms
+	debounce [8] // don't read that one until debounce expires
+	call wrapper
+UDP Interace
+	Change beat mode
+	Change volume
+	Change tempo
+	Play given sound
+Website/Server
+Play beat
+Create 3 beats	// 1 empty, 1 from instructions, 1 custom
+Generate audio
+	Added buttons sounds
+
