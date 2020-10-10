@@ -1,0 +1,37 @@
+
+#content {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#main {
+	width: 550px;
+	float: left;
+	margin: 0 10px 20px 0;
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 0 10px 10px 10px;
+}
+
+#status {
+	width: 185px;
+	float: right;
+	margin-left: 10px;
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 0 10px 10px 10px;
+}
+
+#messages {
+	display: none;
+	width: 780px;
+	padding: 10px;
+	background-color: red;
+	margin-bottom: 1em;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+#mode {
+	font-weight: bold;
+}

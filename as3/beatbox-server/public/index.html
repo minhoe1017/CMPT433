@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>BeagleBone Beat-Box</title>
+	<link rel='stylesheet' href='/stylesheets/style.css'></link>
+</head>
+
+<body>
+	<div id='content'>
+		<h1>BeagleBone Beat-Box</h1>
+
+		<div id='main'>
+			<h2>Drum Beat Selection</h2>
+			<p>Current drum beat mode is <span id="mode"></span><p>
+			<form id='send-form' >
+				<input type="button" id="mode0" value="none"/>
+				<input type="button" id="mode1" value="rock #1"/>
+				<input type="button" id="mode2"  value="rock #2"/>
+			</form>
+			<h3>Volume</h3>
+			<form id='send-volume' >
+				<input type="button" id="voldown" value="-"/>
+				<input type="text" id="volumeid" value="???" size="3" readonly/>
+				<input type="button" id="volup" value="+"/>
+				(0-100)
+			</form>
+			<h3>Tempo</h3>
+			<form id='send-tempo' >
+				<input type="button" id="tempodown" value="-"/>
+				<input type="text" id="tempoid" value="???" size="3" readonly/>
+				<input type="button" id="tempoup" value="+"/>
+				(BPM)
+			</form>
+			<h2>Play Drum Sounds</h2>
+			<form id='send-sound' >
+				<input type="button" id="sound0" value="hi-hat"/>
+				<input type="button" id="sound1" value="snare"/>
+				<input type="button" id="sound2"  value="base"/>
+			</form>
+		</div>
+		<div id='status'>
+			<h2>Beat-Box's Status</h2>
+			<p>Device up for <span id="uptime">...</span>(H:M:S)</p>
+		</div>
+		<br clear="all">
+		<div id='messages'></div>
+	</div>
+	
+	<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+	<script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+	<script src='javascripts/udp_ui.js' type='text/javascript'></script>
+</body>
+</html>
