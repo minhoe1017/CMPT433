@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>BeagleBone Fan Thermostat</title>
+	<link rel='stylesheet' href='/stylesheets/bootstrap.css'></link>
+	<link rel='stylesheet' href='/stylesheets/style.css'></link>
+</head>
+
+<body>
+	<div id='content'>
+		<h1 class="main txtshadow">BeagleBone Fan Thermostat</h1>
+		<span class="logo"></span>
+		<div class="main lead" id="info">
+			Desired Temperature: <span id="room1_pref_temp">0</span>&#8451;<br>
+			Actual Temperature: <span id="room1_act_temp">0</span>&#8451;<br>
+			Fan Status: <span id="fan1_status">off</span>
+		</div>
+		<!--
+		<div class="main">
+			
+			<div id="diagram">
+				<div id="temp1">
+					Desired: <span id="room1_pref_temp">24</span>&#8457;<br>
+					Actual: <span id="room1_act_temp">26</span>&#8457;
+				</div>
+				<div id="temp2">
+					Desired: 24&#8457;<br>
+					Actual: 26&#8457;
+				</div>
+				<div id="temp3">
+					Desired: 24&#8457;<br>
+					Actual: 26&#8457;
+				</div>
+				<div id="fan1">
+					Fan Speed: 75%
+				</div>
+				<div id="fan2">
+					Fan Speed: 45%
+				</div>
+				<div id="fan3">
+					Fan Speed: 60%
+				</div>
+				<div id="fan4">
+					Fan Speed: 20%
+				</div>
+			</div>
+		</div>
+		-->
+		<br clear="all">
+		<div id="room1_chart" class="main" style="height: 300px; width: 100%;"></div>
+		<div id='messages'></div>
+	</div>
+
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+	<script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+	<script src='javascripts/udp_ui.js' type='text/javascript'></script>
+</body>
+</html>

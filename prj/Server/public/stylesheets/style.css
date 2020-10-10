@@ -1,0 +1,142 @@
+body {
+	background-color: gray;
+	background-image: url("/images/gh_bg.jpg");
+	background-repeat: repeat;
+	background-position: center -200px;
+}
+
+#bg {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#logo {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 512px;
+	width: 512px;
+	background-image: url("/images/fan2.png");
+	background-repeat: no-repeat;
+}
+
+#content {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.main {
+	width: 100%;
+	border: 1px solid gray;
+	background-color: white;
+	border-radius: 4px;
+	padding: 0 10px 10px 10px;
+	    position: relative;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    background: white;
+}
+
+#main::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
+
+#info {
+	margin: 80px 0 10px 0;
+	text-align: center;
+	font-size: 20px;
+}
+
+#diagram {
+	position: relative;
+	width: 591px;
+	height: 516px;
+	margin: 10px auto;
+	background-image: url("/images/fan-diagram.png");
+	background-repeat: no-repeat;
+}
+
+#temp1 {
+	position: relative;
+	top: 130px;
+	left: 150px;
+}
+
+#temp2 {
+	position: relative;
+	top: 200px;
+	left: 430px;
+}
+
+#temp3 {
+	position: relative;
+	top: 320px;
+	left: 150px;
+}
+
+#fan1 {
+	position: relative;
+	top: -40px;
+	left: 350px;
+}
+
+#fan2 {
+	position: relative;
+	top: 260px;
+	left: 350px;
+}
+
+#fan3 {
+	position: relative;
+	top: -85px;
+	left: -40px;
+	width: 150px;
+	background-color: white;
+}
+
+#fan4 {
+	position: relative;
+	top: 220px;
+	left: -40px;
+	width: 150px;
+	background-color: white;
+}
+
+#status {
+	width: 185px;
+	float: right;
+	margin-left: 10px;
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 0 10px 10px 10px;
+}
+
+#messages {
+	display: none;
+	width: 1000px;
+	padding: 10px;
+	background-color: red;
+	margin-bottom: 1em;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+#mode {
+	font-weight: bold;
+}
+
+.txtshadow {
+	font-weight: bolder;
+	text-shadow: 0 1px 1px gray;
+	text-align: center;
+}
